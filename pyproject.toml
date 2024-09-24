@@ -10,6 +10,11 @@ readme = "README.md"
 python = "^3.12"
 django = "^5.1"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "0.6.7"
+mypy = "1.11.2"
+django-stubs = "5.1.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
