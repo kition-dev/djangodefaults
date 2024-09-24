@@ -9,8 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `py.typed` marker
+- Default settings for the staticfiles app
 
 ### Changed
+- Moved the `initialize_settings` function. It should be imported via
+  `from kition_djangodefaults import initialize_settings`
 
 ### Removed
 

@@ -7,7 +7,7 @@ from django.conf import settings, Settings
 
 
 def initialize_settings():
-    default_settings = Settings("kition_djangodefaults.default_settings")
+    default_settings = Settings("kition_djangodefaults.settings.default")
 
     SETTINGS_MODULE = os.environ.get(DJANGO_SETTINGS_ENVIRONMENT_VARIABLE)
     django_settings_module = importlib.import_module(SETTINGS_MODULE)

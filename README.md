@@ -32,7 +32,7 @@ Example
 import os
 import sys
 
-from kition_djangodefaults.settings import initialize_settings
+from kition_djangodefaults import initialize_settings
 
 
 def main():
