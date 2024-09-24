@@ -27,6 +27,7 @@ Use the default settings by calling `initialize_settings()` after defining the `
 `manage.py`.
 
 Example
+
 ```python
 import os
 import sys
@@ -65,4 +66,11 @@ MIDDLEWARE = [
     "kition_django_defaults.healthcheck.HealthCheckMiddleware",
     ...
 ]
+```
+
+## Development
+
+```bash
+poetry env use $(pyenv which python)
+poetry install
 ```
