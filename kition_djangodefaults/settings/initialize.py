@@ -8,7 +8,7 @@ from django.conf import settings, Settings
 
 def initialize_settings():
     if settings.configured:
-        return 
+        return
 
     default_settings = Settings("kition_djangodefaults.settings.default")
 
