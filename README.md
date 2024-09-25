@@ -24,7 +24,7 @@ Python 3.12 and Django 5.1 supported.
 ## Default Configuration
 
 Use the default settings by calling `initialize_settings()` after defining the `DJANGO_SETTINGS_MODULE` within
-`manage.py`.
+`manage.py` and WSGI / ASGI.
 
 Example
 
