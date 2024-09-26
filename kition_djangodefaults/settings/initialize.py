@@ -1,23 +1,20 @@
-import importlib
-import os
-from copy import copy
+import sys
 
-from django.conf import ENVIRONMENT_VARIABLE as DJANGO_SETTINGS_ENVIRONMENT_VARIABLE
-from django.conf import settings, Settings
+from django.conf import Settings
 
 
-def initialize_settings():
-    if settings.configured:
-        return
+def initialize_default_settings(settings_module_name):
+    """
+    Add Kition default settings to your applications settings module. The Django default settings are already applied.
+
+    Call it like `initialize_default_settings(__name__)` within the settings module.
+
+    :param settings_module_name: `__name__` of the applications settings module
+    """
+    settings_module = sys.modules[settings_module_name]
 
     default_settings = Settings("kition_djangodefaults.settings.default")
 
-    SETTINGS_MODULE = os.environ.get(DJANGO_SETTINGS_ENVIRONMENT_VARIABLE)
-    django_settings_module = importlib.import_module(SETTINGS_MODULE)
-
-    django_settings_module_processed = copy(django_settings_module.__dict__)
-    for key in django_settings_module.__dict__.keys():
-        if not key.isupper():
-            django_settings_module_processed.pop(key)
-
-    settings.configure(default_settings, **django_settings_module_processed)
+    for key in default_settings.__dict__.keys():
+        if key.isupper():
+            setattr(settings_module, key, default_settings.__dict__[key])
