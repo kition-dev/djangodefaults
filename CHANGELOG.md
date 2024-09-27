@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - django_q2 background task support for the sendtestmail management command.
 
 ### Changed
+- Changing `ALLOWED_HOSTS` to be singular `ALLOWED_HOST`. No semantics are changed.
 
 ### Removed
 
