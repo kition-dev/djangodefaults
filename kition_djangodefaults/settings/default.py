@@ -3,6 +3,7 @@ import os
 from django.core.management.utils import get_random_secret_key
 
 from .default_basedir import BASE_DIR
+from .util import convert_http_header_to_django
 
 DEBUG = os.getenv("DEBUG", "false").lower() == "true"
 SECRET_KEY = os.getenv("SECRET_KEY", get_random_secret_key())
@@ -14,7 +15,13 @@ ALLOWED_HOSTS = [
 if os.getenv("CSRF_TRUSTED_ORIGIN"):
     CSRF_TRUSTED_ORIGINS = [os.getenv("CSRF_TRUSTED_ORIGIN")]
 
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_PROXY_SSL_HEADER = (
+    os.getenv(
+        "SECURE_PROXY_SSL_HEADER_NAME",
+        convert_http_header_to_django("X-Forwarded-Proto"),
+    ),
+    os.getenv("SECURE_PROXY_SSL_HEADER_VALUE", "https"),
+)
 TLS_ENABLED = os.getenv("TLS_ENABLED", "false").lower() == "true"
 if TLS_ENABLED:
     SECURE_SSL_REDIRECT = True

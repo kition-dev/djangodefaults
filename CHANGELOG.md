@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - django_q2 background task support for the sendtestmail management command.
+- Environment variables `SECURE_PROXY_SSL_HEADER_NAME` and `SECURE_PROXY_SSL_HEADER_VALUE` to configure the Django
+  `SECURE_PROXY_SSL_HEADER` setting.
 
 ### Changed
 - Changing `ALLOWED_HOSTS` to be singular `ALLOWED_HOST`. No semantics are changed.
