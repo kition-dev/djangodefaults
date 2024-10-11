@@ -1,5 +1,9 @@
 # Kition Django Defaults
 
+![PyPI](https://img.shields.io/pypi/v/kition-djangodefaults.svg)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/kition-djangodefaults.svg)
+![PyPI - License](https://img.shields.io/pypi/l/kition-djangodefaults.svg)
+
 This package provides default configuration and components for Django projects.
 
 ## Motivation
