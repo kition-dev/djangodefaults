@@ -1,9 +1,9 @@
 # Kition Django Defaults
 
 [![CI](https://github.com/kition-dev/djangodefaults/actions/workflows/test.yml/badge.svg)](https://github.com/kition-dev/djangodefaults/actions/workflows/test.yml)
-![PyPI](https://img.shields.io/pypi/v/kition-djangodefaults.svg)
+[![PyPI](https://img.shields.io/pypi/v/kition-djangodefaults.svg)](https://pypi.org/project/kition-djangodefaults/)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/kition-djangodefaults.svg)
-![PyPI - License](https://img.shields.io/pypi/l/kition-djangodefaults.svg)
+[![PyPI - License](https://img.shields.io/pypi/l/kition-djangodefaults.svg)](https://github.com/kition-dev/djangodefaults/blob/main/LICENSE)
 
 This package provides default configuration and components for Django projects.
 
