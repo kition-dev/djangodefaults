@@ -128,20 +128,18 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
-    "default": {},
-}
-
-OBJECT_STORAGE_ENABLED = os.getenv("OBJECT_STORAGE_ENABLED", "false").lower() == "true"
-if OBJECT_STORAGE_ENABLED:
-    STORAGES["default"] = {
+    "default": {
         "BACKEND": "storages.backends.s3.S3Storage",
         "OPTIONS": {
             "bucket_name": os.getenv("STORAGE_BUCKET_NAME", "app"),
             "endpoint_url": os.getenv("STORAGE_ENDPOINT", "http://localhost:9000"),
             "region_name": os.getenv("STORAGE_REGION", "eu-central-1"),
         },
-    }
-else:
+    },
+}
+
+OBJECT_STORAGE_ENABLED = os.getenv("OBJECT_STORAGE_ENABLED", "false").lower() == "true"
+if not OBJECT_STORAGE_ENABLED:
     STORAGES["default"] = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     }
