@@ -1,4 +1,5 @@
 import os
+from importlib.util import find_spec
 
 from django.core.management.utils import get_random_secret_key
 
@@ -144,3 +145,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+########
+# Background Tasks via django-q2
+####
+if find_spec("django_q"):
+    Q_CLUSTER = {
+        "name": "DjangORM",
+        "workers": 2,
+        "timeout": 90,
+        "retry": 120,
+        "queue_limit": 50,
+        "bulk": 10,
+        "orm": "default",
+        "catch_up": False,
+    }

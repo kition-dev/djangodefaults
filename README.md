@@ -116,3 +116,11 @@ The application connects to a locally hosted Postgres by default.
 | `EMAIL_USE_TLS`       | Specifies whether the email transmission should use TLS encryption.                                         | `false`               |
 | `EMAIL_HOST_USER`     | The username for authenticating with the email host.                                                        | `""`                  |
 | `EMAIL_HOST_PASSWORD` | The password for authenticating with the email host.                                                        | `""`                  |
+
+### Background Tasks via django-q2
+
+If `django_q` is available
+- a default configuration using the DjangoORM is applied and
+- the `sendtestmail` management command allows sending via a background task.
+
+You are able to install the dependency via the `worker` extra.

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Environment variables `SECURE_PROXY_SSL_HEADER_NAME` and `SECURE_PROXY_SSL_HEADER_VALUE` to configure the Django
   `SECURE_PROXY_SSL_HEADER` setting.
 - Explicit dependency on the packages we already rely on to be installed.
+- `worker` extra, which adds `django-q2` and a default configuration targeting the Django ORM.
 
 ### Changed
 - Changing `ALLOWED_HOSTS` to be singular `ALLOWED_HOST`. No semantics are changed.
