@@ -15,14 +15,52 @@ files = [
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "boto3"
+version = "1.35.39"
+description = "The AWS SDK for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "boto3-1.35.39-py3-none-any.whl", hash = "sha256:5970b62c1ec8177501e02520f0d41839ca5fc549b30bac4e8c0c0882ae776217"},
+    {file = "boto3-1.35.39.tar.gz", hash = "sha256:670f811c65e3c5fe4ed8c8d69be0b44b1d649e992c0fc16de43816d1188f88f1"},
+]
+
+[package.dependencies]
+botocore = ">=1.35.39,<1.36.0"
+jmespath = ">=0.7.1,<2.0.0"
+s3transfer = ">=0.10.0,<0.11.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
+
+[[package]]
+name = "botocore"
+version = "1.35.39"
+description = "Low-level, data-driven core of boto 3."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "botocore-1.35.39-py3-none-any.whl", hash = "sha256:781c547eb6a79c0e4b0bedd87b81fbfed957816b4841d33e20c8f1989c7c19ce"},
+    {file = "botocore-1.35.39.tar.gz", hash = "sha256:cb7f851933b5ccc2fba4f0a8b846252410aa0efac5bfbe93b82d10801f5f8e90"},
+]
+
+[package.dependencies]
+jmespath = ">=0.7.1,<2.0.0"
+python-dateutil = ">=2.1,<3.0.0"
+urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >= \"3.10\""}
+
+[package.extras]
+crt = ["awscrt (==0.22.0)"]
+
+[[package]]
 name = "django"
-version = "5.1.1"
+version = "5.1.2"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 optional = false
 python-versions = ">=3.10"
 files = [
-    {file = "Django-5.1.1-py3-none-any.whl", hash = "sha256:71603f27dac22a6533fb38d83072eea9ddb4017fead6f67f2562a40402d61c3f"},
-    {file = "Django-5.1.1.tar.gz", hash = "sha256:021ffb7fdab3d2d388bc8c7c2434eb9c1f6f4d09e6119010bbb1694dda286bc2"},
+    {file = "Django-5.1.2-py3-none-any.whl", hash = "sha256:f11aa87ad8d5617171e3f77e1d5d16f004b79a2cf5d2e1d2b97a6a1f8e9ba5ed"},
+    {file = "Django-5.1.2.tar.gz", hash = "sha256:bd7376f90c99f96b643722eee676498706c9fd7dc759f55ebfaf2c08ebcdf4f0"},
 ]
 
 [package.dependencies]
@@ -33,6 +71,30 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-storages"
+version = "1.14.4"
+description = "Support for many storage backends in Django"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "django-storages-1.14.4.tar.gz", hash = "sha256:69aca94d26e6714d14ad63f33d13619e697508ee33ede184e462ed766dc2a73f"},
+    {file = "django_storages-1.14.4-py3-none-any.whl", hash = "sha256:d61930acb4a25e3aebebc6addaf946a3b1df31c803a6bf1af2f31c9047febaa3"},
+]
+
+[package.dependencies]
+boto3 = {version = ">=1.4.4", optional = true, markers = "extra == \"s3\""}
+Django = ">=3.2"
+
+[package.extras]
+azure = ["azure-core (>=1.13)", "azure-storage-blob (>=12)"]
+boto3 = ["boto3 (>=1.4.4)"]
+dropbox = ["dropbox (>=7.2.1)"]
+google = ["google-cloud-storage (>=1.27)"]
+libcloud = ["apache-libcloud"]
+s3 = ["boto3 (>=1.4.4)"]
+sftp = ["paramiko (>=1.15)"]
 
 [[package]]
 name = "django-stubs"
@@ -71,6 +133,17 @@ files = [
 [package.dependencies]
 django = "*"
 typing-extensions = "*"
+
+[[package]]
+name = "jmespath"
+version = "1.0.1"
+description = "JSON Matching Expressions"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "jmespath-1.0.1-py3-none-any.whl", hash = "sha256:02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980"},
+    {file = "jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"},
+]
 
 [[package]]
 name = "mypy"
@@ -130,6 +203,43 @@ files = [
 ]
 
 [[package]]
+name = "psycopg"
+version = "3.2.3"
+description = "PostgreSQL database adapter for Python"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "psycopg-3.2.3-py3-none-any.whl", hash = "sha256:644d3973fe26908c73d4be746074f6e5224b03c1101d302d9a53bf565ad64907"},
+    {file = "psycopg-3.2.3.tar.gz", hash = "sha256:a5764f67c27bec8bfac85764d23c534af2c27b893550377e37ce59c12aac47a2"},
+]
+
+[package.dependencies]
+typing-extensions = {version = ">=4.6", markers = "python_version < \"3.13\""}
+tzdata = {version = "*", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+binary = ["psycopg-binary (==3.2.3)"]
+c = ["psycopg-c (==3.2.3)"]
+dev = ["ast-comments (>=1.1.2)", "black (>=24.1.0)", "codespell (>=2.2)", "dnspython (>=2.1)", "flake8 (>=4.0)", "mypy (>=1.11)", "types-setuptools (>=57.4)", "wheel (>=0.37)"]
+docs = ["Sphinx (>=5.0)", "furo (==2022.6.21)", "sphinx-autobuild (>=2021.3.14)", "sphinx-autodoc-typehints (>=1.12)"]
+pool = ["psycopg-pool"]
+test = ["anyio (>=4.0)", "mypy (>=1.11)", "pproxy (>=2.7)", "pytest (>=6.2.5)", "pytest-cov (>=3.0)", "pytest-randomly (>=3.5)"]
+
+[[package]]
+name = "python-dateutil"
+version = "2.9.0.post0"
+description = "Extensions to the standard Python datetime module"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
+files = [
+    {file = "python-dateutil-2.9.0.post0.tar.gz", hash = "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"},
+    {file = "python_dateutil-2.9.0.post0-py2.py3-none-any.whl", hash = "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"},
+]
+
+[package.dependencies]
+six = ">=1.5"
+
+[[package]]
 name = "ruff"
 version = "0.6.7"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -154,6 +264,34 @@ files = [
     {file = "ruff-0.6.7-py3-none-win_amd64.whl", hash = "sha256:590445eec5653f36248584579c06252ad2e110a5d1f32db5420de35fb0e1c977"},
     {file = "ruff-0.6.7-py3-none-win_arm64.whl", hash = "sha256:b28f0d5e2f771c1fe3c7a45d3f53916fc74a480698c4b5731f0bea61e52137c8"},
     {file = "ruff-0.6.7.tar.gz", hash = "sha256:44e52129d82266fa59b587e2cd74def5637b730a69c4542525dfdecfaae38bd5"},
+]
+
+[[package]]
+name = "s3transfer"
+version = "0.10.3"
+description = "An Amazon S3 Transfer Manager"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "s3transfer-0.10.3-py3-none-any.whl", hash = "sha256:263ed587a5803c6c708d3ce44dc4dfedaab4c1a32e8329bab818933d79ddcf5d"},
+    {file = "s3transfer-0.10.3.tar.gz", hash = "sha256:4f50ed74ab84d474ce614475e0b8d5047ff080810aac5d01ea25231cfc944b0c"},
+]
+
+[package.dependencies]
+botocore = ">=1.33.2,<2.0a.0"
+
+[package.extras]
+crt = ["botocore[crt] (>=1.33.2,<2.0a.0)"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+files = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 
 [[package]]
@@ -204,7 +342,24 @@ files = [
     {file = "tzdata-2024.2.tar.gz", hash = "sha256:7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"},
 ]
 
+[[package]]
+name = "urllib3"
+version = "2.2.3"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "urllib3-2.2.3-py3-none-any.whl", hash = "sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac"},
+    {file = "urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"},
+]
+
+[package.extras]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+h2 = ["h2 (>=4,<5)"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "25b49408532ecb16ad2b1d8ce5b12ad3d0f0a6d08e34d0bc0d262b1cc38bf1bb"
+content-hash = "932a4e12673a52b4552a21cbc211b076078c7c09ac28a72b350c79cf4e63cce7"
