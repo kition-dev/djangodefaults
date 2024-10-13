@@ -32,6 +32,9 @@ Python 3.12 and Django 5.1 supported.
    ```
 3. (Optional) configure any of the following components.
 
+Consider explicitly listing the dependencies of `kition-djangodefaults` in your project to pin specific versions of
+Django, psycopg and others.
+
 ## Kubernetes Readiness Endpoint Middleware
 
 Install via
