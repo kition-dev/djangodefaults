@@ -20,8 +20,6 @@ class HealthCheckMiddleware:
 
     @staticmethod
     def readiness(request):
-        print("healthcheck middleware")
-
         # Connect to each database and do a generic standard SQL query
         # that doesn't write any data and doesn't depend on any tables
         # being present.
