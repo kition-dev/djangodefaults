@@ -8,12 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Removed
+
+### Fixed
+
+## [0.5.0] - 2024-11-27
+### Added
 - `BASE_DIR / "templates"` as a template search path.
 
 ### Changed
 - Disabling the `AWS_S3_FILE_OVERWRITE` by default, if the object storage is enabled to prevent unintended overrides.
-
-### Removed
 
 ### Fixed
 - The `HealthCheckMiddleware` logged an unnecessary statement every time it got a request.
@@ -56,7 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2024-09-24
 Initial release.
 
-[Unreleased]: https://github.com/kition-dev/djangodefaults/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/kition-dev/djangodefaults/compare/0.5.0...HEAD
+[0.5.0]: https://github.com/kition-dev/djangodefaults/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/kition-dev/djangodefaults/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/kition-dev/djangodefaults/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/kition-dev/djangodefaults/compare/0.1.0...0.2.0
