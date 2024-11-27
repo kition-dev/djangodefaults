@@ -78,7 +78,9 @@ STORAGES = {
 }
 
 OBJECT_STORAGE_ENABLED = os.getenv("OBJECT_STORAGE_ENABLED", "false").lower() == "true"
-if not OBJECT_STORAGE_ENABLED:
+if OBJECT_STORAGE_ENABLED:
+    AWS_S3_FILE_OVERWRITE = False
+else:
     STORAGES["default"] = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     }

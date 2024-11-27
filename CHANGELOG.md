@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `BASE_DIR / "templates"` as a template search path.
 
 ### Changed
+- Disabling the `AWS_S3_FILE_OVERWRITE` by default, if the object storage is enabled to prevent unintended overrides.
 
 ### Removed
 
