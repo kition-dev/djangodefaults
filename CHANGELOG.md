@@ -8,14 +8,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- `configure_logging_to_skip_exception` function to clean the Django unittest log.
 
 ### Changed
-- Migrating from a Poetry-specific to a generic `pyproject.toml`.
 
 ### Removed
 
 ### Fixed
+
+## [0.5.1] - 2025-08-04
+### Added
+- `configure_logging_to_skip_exception` function to clean the Django unittest log.
+
+### Changed
+- Migrating from a Poetry-specific to a generic `pyproject.toml`.
+- Using compatible release specifiers for library dependencies.
 
 ## [0.5.0] - 2024-11-27
 ### Added
@@ -65,7 +71,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2024-09-24
 Initial release.
 
-[Unreleased]: https://github.com/kition-dev/djangodefaults/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/kition-dev/djangodefaults/compare/0.5.1...HEAD
+[0.5.1]: https://github.com/kition-dev/djangodefaults/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/kition-dev/djangodefaults/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/kition-dev/djangodefaults/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/kition-dev/djangodefaults/compare/0.2.0...0.3.0
