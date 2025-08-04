@@ -19,7 +19,7 @@ jobs:
         with:
           cache: "poetry"
       - name: Install the project dependencies
-        run: poetry install
+        run: poetry install --extras=dev
       - run: poetry run ruff check
       - run: poetry run ruff format --check
 
@@ -33,7 +33,7 @@ jobs:
         with:
           cache: "poetry"
       - name: Install the project dependencies
-        run: poetry install
+        run: poetry install --extras=dev
       - run: poetry run mypy kition_djangodefaults
 
   unittest:
@@ -48,5 +48,5 @@ jobs:
       - name: Install Poetry
         uses: abatilo/actions-poetry@v2
       - name: Install the project dependencies
-        run: poetry install
+        run: poetry install --extras=dev
       - run: poetry run python -m unittest
