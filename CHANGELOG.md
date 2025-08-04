@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- `configure_logging_to_skip_exception` function to clean the Django unittest log.
 
 ### Changed
 - Migrating from a Poetry-specific to a generic `pyproject.toml`.
