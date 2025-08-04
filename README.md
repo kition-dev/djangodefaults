@@ -48,6 +48,23 @@ MIDDLEWARE = [
 ]
 ```
 
+## Prevent Exception Logging in Tests
+
+Django views that raise `PermissionDenied` or `Http404` errors clutter the log and tell them apart from deprecation
+warnings. To prevent them call `configure_logging_to_skip_exception` within your test settings.
+
+```python
+import logging
+
+from django.core.exceptions import PermissionDenied
+from kition_djangodefaults import configure_logging_to_skip_exception
+
+from config.settings import *
+
+global LOGGING
+configure_logging_to_skip_exception(LOGGING, PermissionDenied, logging.ERROR)
+```
+
 ## Development
 
 ```bash
@@ -120,6 +137,7 @@ The application connects to a locally hosted Postgres by default.
 ### Background Tasks via django-q2
 
 If `django_q` is available
+
 - a default configuration using the DjangoORM is applied and
 - the `sendtestmail` management command allows sending via a background task.
 

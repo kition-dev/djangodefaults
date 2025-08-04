@@ -9,19 +9,19 @@ authors = [
 license = "MIT"
 requires-python = ">=3.12,<4"
 dependencies = [
-    "django (>=5.1)",
-    "psycopg (>=3.2)",
-    "django-storages[s3] (>=1.14)",
+    "django (~=5.1)",
+    "psycopg (~=3.2)",
+    "django-storages[s3] (~=1.14)",
 ]
 
 [project.optional-dependencies]
 worker = [
-    "django-q2 (>=1.7)",
+    "django-q2 (~=1.7)",
 ]
 dev = [
-    "ruff (==0.6.7)",
-    "mypy (==1.11.2)",
-    "django-stubs (==5.1.0)"
+    "ruff (==0.12.7)",
+    "mypy (==1.17.1)",
+    "django-stubs (==5.2.2)"
 ]
 
 [project.urls]
