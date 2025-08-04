@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ```bash
 poetry env use $(pyenv which python)
-poetry install
+poetry install --extras=dev --extras=worker
 poetry run python -m unittest
 ```
 
