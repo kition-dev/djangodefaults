@@ -19,7 +19,7 @@ worker = [
     "django-q2 (~=1.7)",
 ]
 dev = [
-    "ruff (==0.12.7)",
+    "ruff (==0.12.10)",
     "mypy (==1.17.1)",
     "django-stubs (==5.2.2)"
 ]
