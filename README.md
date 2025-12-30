@@ -16,7 +16,7 @@ the mental overhead by providing code that otherwise would have to be repeated.
 
 ### Requirements
 
-Python 3.12 and Django 5.1 supported.
+Python 3.12+ and Django 5.1+ supported.
 
 ### Installation
 
