@@ -15,6 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [0.5.2] - 2025-12-30
+### Changed
+- Allowing every Django version above 5.1
+- Updating `django-q2` to also permit a Django 6
+
 ## [0.5.1] - 2025-08-04
 ### Added
 - `configure_logging_to_skip_exception` function to clean the Django unittest log.
