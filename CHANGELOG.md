@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Fixed
+- Every Django default setting is explicitly applied, which triggeres deprecation warning for settings, which the
+  consuming project isn't even setting.
 
 ## [0.5.2] - 2025-12-30
 ### Changed

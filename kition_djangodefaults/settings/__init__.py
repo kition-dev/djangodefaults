@@ -14,5 +14,5 @@ def initialize_default_settings(settings_module_name: str):
     default_settings = Settings("kition_djangodefaults.settings.default")
 
     for key in default_settings.__dict__.keys():
-        if key.isupper():
+        if key.isupper() and default_settings.is_overridden(key):
             setattr(settings_module, key, default_settings.__dict__[key])
