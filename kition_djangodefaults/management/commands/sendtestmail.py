@@ -1,6 +1,5 @@
 import logging
 from importlib.util import find_spec
-from typing import Type
 
 from django.conf import settings
 from django.core.mail import send_mail
@@ -82,7 +81,7 @@ class BackgroundSendTestMailCommand(SendTestMailCommand):
             )
 
 
-Command: Type[SendTestMailCommand]
+Command: type[SendTestMailCommand]
 if find_spec("django_q") is None:
     Command = SendTestMailCommand
 else:

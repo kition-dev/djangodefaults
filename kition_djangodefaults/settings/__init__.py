@@ -8,11 +8,12 @@ def initialize_default_settings(settings_module_name: str):
     :param settings_module_name: `__name__` of the applications settings module
     """
     import sys
+
     from django.conf import Settings
 
     settings_module = sys.modules[settings_module_name]
     default_settings = Settings("kition_djangodefaults.settings.default")
 
-    for key in default_settings.__dict__.keys():
+    for key in default_settings.__dict__:
         if key.isupper() and default_settings.is_overridden(key):
             setattr(settings_module, key, default_settings.__dict__[key])

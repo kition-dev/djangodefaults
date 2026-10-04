@@ -1,4 +1,4 @@
-from django.http import HttpResponseServerError, HttpResponse
+from django.http import HttpResponse, HttpResponseServerError
 
 
 class HealthCheckMiddleware:
@@ -12,9 +12,8 @@ class HealthCheckMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.method == "GET":
-            if request.path == "/readiness":
-                return self.readiness(request)
+        if request.method == "GET" and request.path == "/readiness":
+            return self.readiness(request)
 
         return self.get_response(request)
 
@@ -32,7 +31,7 @@ class HealthCheckMiddleware:
                 row = cursor.fetchone()
                 if row is None:
                     return HttpResponseServerError("db: invalid response")
-        except Exception:
+        except Exception:  # noqa: BLE001
             return HttpResponseServerError("db: cannot connect to database.")
 
         return HttpResponse("OK")

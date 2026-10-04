@@ -44,7 +44,7 @@ MIDDLEWARE = [
     # Putting the healthcheck middleware first to circumvent ALLOWED_HOSTS protections, which would fail Kubernetes
     # Readiness Probe requests.
     "kition_django_defaults.healthcheck.HealthCheckMiddleware",
-    ...
+    ...,
 ]
 ```
 

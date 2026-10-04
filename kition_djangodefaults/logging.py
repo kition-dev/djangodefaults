@@ -12,7 +12,7 @@ def configure_logging_to_skip_exception(LOGGING, ExceptionClass, level=logging.W
 
     def skip_exception(record):
         if record.exc_info:
-            exc_type, exc_value = record.exc_info[:2]
+            _, exc_value = record.exc_info[:2]
             if isinstance(exc_value, ExceptionClass):
                 return False
         return True
