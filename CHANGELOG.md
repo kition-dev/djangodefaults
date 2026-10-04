@@ -10,9 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
-- Configuring `MAILERS` instead of `EMAIL_*` on Django >= 6.1
 
 ### Removed
+
+### Fixed
+
+## [0.6.0] - 2026-10-05
+### Changed
+- Configuring `MAILERS` instead of `EMAIL_*` on Django >= 6.1
+- Minor code changes to address default ruff rules
 
 ### Fixed
 - Every Django default setting is explicitly applied, which triggeres deprecation warning for settings, which the
@@ -79,7 +85,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2024-09-24
 Initial release.
 
-[Unreleased]: https://github.com/kition-dev/djangodefaults/compare/0.5.2...HEAD
+[Unreleased]: https://github.com/kition-dev/djangodefaults/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/kition-dev/djangodefaults/compare/0.5.2...0.6.0
 [0.5.2]: https://github.com/kition-dev/djangodefaults/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/kition-dev/djangodefaults/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/kition-dev/djangodefaults/compare/0.4.0...0.5.0
