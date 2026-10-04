@@ -1,6 +1,7 @@
 import os
 from importlib.util import find_spec
 
+from django import VERSION as DJANGO_VERSION
 from django.core.management.utils import get_random_secret_key
 
 from .default_basedir import BASE_DIR
@@ -91,12 +92,27 @@ else:
 # E-Mail
 ####
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@example.com")
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = os.getenv("EMAIL_HOST", "localhost")
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 1025))
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "false").lower() == "true"
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+
+if DJANGO_VERSION >= (6, 1):
+    MAILERS = {
+        "default": {
+            "BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+            "OPTIONS": {
+                "host": os.getenv("EMAIL_HOST", "localhost"),
+                "use_tls": os.getenv("EMAIL_USE_TLS", "false").lower() == "true",
+                "port": int(os.getenv("EMAIL_PORT", 1025)),
+                "username": os.getenv("EMAIL_HOST_USER"),
+                "password": os.getenv("EMAIL_HOST_PASSWORD"),
+            },
+        },
+    }
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = os.getenv("EMAIL_HOST", "localhost")
+    EMAIL_PORT = int(os.getenv("EMAIL_PORT", 1025))
+    EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "false").lower() == "true"
+    EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 ########
 # Miscellaneous

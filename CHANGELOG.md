@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 ### Changed
+- Configuring `MAILERS` instead of `EMAIL_*` on Django >= 6.1
 
 ### Removed
 
